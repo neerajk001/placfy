@@ -1,0 +1,16 @@
+import React from 'react';
+
+const General: React.FC = () => {
+  return (
+    <div className="flex-1 p-6 overflow-y-auto bg-gray-50">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-2xl font-bold text-gray-900 mb-6">General</h2>
+        <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+          <p className="text-gray-600">General settings and configuration</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default General;

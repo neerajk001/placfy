@@ -27,10 +27,15 @@ interface SubMenuItem {
   status?: 'star-filled' | 'star-outline' | 'locked';
 }
 
-const CollapsibleSidebar: React.FC = () => {
+interface CollapsibleSidebarProps {
+  onSectionChange?: (section: string) => void;
+}
+
+const CollapsibleSidebar: React.FC<CollapsibleSidebarProps> = ({ onSectionChange }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [activeItem, setActiveItem] = useState<string>('dashboards');
+  const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
 
   const menuItems: MenuItem[] = [
     {
@@ -61,7 +66,11 @@ const CollapsibleSidebar: React.FC = () => {
     {
       id: 'hr',
       label: 'HR',
-      icon: Users
+      icon: Users,
+      subItems: [
+        { id: 'employees', label: 'Employees', status: 'star-outline' },
+        { id: 'assignment', label: 'Assignment', status: 'star-outline' }
+      ]
     },
     {
       id: 'general',
@@ -110,7 +119,10 @@ const CollapsibleSidebar: React.FC = () => {
       </div>
 
       {/* Navigation Menu */}
-      <nav className="flex-1 p-2 space-y-1 overflow-y-auto overflow-x-hidden">
+      <nav className="flex-1 p-2 space-y-1 overflow-y-auto scrollbar-hide" style={{
+        scrollbarWidth: 'none', 
+        msOverflowStyle: 'none', 
+      }}>
         {menuItems.map((item) => {
           const Icon = item.icon;
           const isHovered = hoveredItem === item.id;
@@ -122,9 +134,9 @@ const CollapsibleSidebar: React.FC = () => {
               {/* Main Menu Item */}
               <div
                 className={`
-                  flex items-center px-3 py-3 rounded-lg cursor-pointer transition-all duration-200 group
+                  flex items-center px-3 py-3 rounded-lg cursor-pointer transition-all duration-200 group relative
                   ${isActive 
-                    ? 'bg-blue-600' 
+                    ? 'bg-orange-600' 
                     : isHovered 
                       ? item.hasGradient 
                         ? 'bg-gradient-to-r from-purple-500 to-pink-500' 
@@ -134,13 +146,32 @@ const CollapsibleSidebar: React.FC = () => {
                 `}
                 onMouseEnter={() => setHoveredItem(item.id)}
                 onMouseLeave={() => setHoveredItem(null)}
-                onClick={() => setActiveItem(item.id)}
+                onClick={() => {
+                  console.log('Clicked item:', item.id, 'hasSubItems:', hasSubItems);
+                  setActiveItem(item.id);
+                  if (hasSubItems) {
+                    setOpenSubmenu(openSubmenu === item.id ? null : item.id);
+                    console.log('Open submenu:', openSubmenu === item.id ? null : item.id);
+                  } else {
+                    // Navigate to main menu item if it doesn't have sub-items
+                    onSectionChange?.(item.id);
+                  }
+                }}
               >
+                {/* Vertical gray bar on hover */}
+                {isHovered && !isActive && (
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-gray-400 rounded-r"></div>
+                )}
                 <Icon className="h-5 w-5 text-white flex-shrink-0" />
                 
                 {/* Text Label - Hidden when collapsed */}
                 {!isCollapsed && (
-                  <span className="text-white font-medium ml-3 truncate">{item.label}</span>
+                  <div className="flex items-center justify-between w-full">
+                    <span className="text-white font-medium ml-3 truncate">{item.label}</span>
+                    {hasSubItems && (
+                      <ChevronRight className={`h-4 w-4 text-gray-400 transition-transform duration-200 ${openSubmenu === item.id ? 'rotate-90' : ''}`} />
+                    )}
+                  </div>
                 )}
 
                 {/* Tooltip for collapsed state */}
@@ -151,16 +182,16 @@ const CollapsibleSidebar: React.FC = () => {
                 )}
               </div>
 
-              {/* Sub Menu Items - Only show when not collapsed and hovered */}
-              {hasSubItems && isHovered && !isCollapsed && (
-                <div className="absolute left-full top-0 ml-2 w-48 bg-gray-800 rounded-lg shadow-lg border border-gray-600 z-50 overflow-hidden">
+              {/* Sub Menu Items - Only show when not collapsed and clicked */}
+              {hasSubItems && openSubmenu === item.id && !isCollapsed && (
+                <div className="w-full bg-gray-800 rounded-lg shadow-lg  border-gray-600 z-50 overflow-hidden mt-1">
                   {item.subItems!.map((subItem) => (
                     <div
                       key={subItem.id}
-                      className="flex items-center justify-between px-4 py-3 hover:bg-gray-700 cursor-pointer transition-colors duration-200 first:rounded-t-lg last:rounded-b-lg whitespace-nowrap"
+                      className="flex items-center px-4 py-3 hover:bg-gray-700 cursor-pointer transition-colors duration-200 first:rounded-t-lg last:rounded-b-lg whitespace-nowrap"
+                      onClick={() => onSectionChange?.(subItem.id)}
                     >
                       <span className="text-gray-300 text-sm truncate">{subItem.label}</span>
-                      {subItem.status && getStatusIcon(subItem.status)}
                     </div>
                   ))}
                 </div>

@@ -7,7 +7,7 @@ import Testimonials from './components/Testimonials';
 import Pricing from './components/Pricing';
 import CtaBanner from './components/CtaBanner';
 import SiteFooter from './components/SiteFooter';
-import AdminDemo from './components/AdminDemo';
+import AdminRoutes from './routes/AdminRoutes';
 
 
 const App = () => {
@@ -27,10 +27,11 @@ const App = () => {
         </div>
       } />
       
-      {/* Admin Demo */}
-      <Route path="/admin" element={<AdminDemo />} />
+      {/* Admin Routes */}
+      <Route path="/admin/*" element={<AdminRoutes />} />
     </Routes>
   );
 };
 
 export default App;
+
