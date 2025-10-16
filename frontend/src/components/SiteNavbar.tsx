@@ -173,7 +173,7 @@ function NavItemWithHover({ label, type }: NavItemWithHoverProps) {
       </Link>
       
       {/* Hover Dropdown */}
-      <div className={`absolute top-full left-1/2 transform -translate-x-1/2 w-80 bg-gray-900 border border-gray-700 shadow-xl z-50 overflow-hidden ${
+      <div className={`absolute top-full left-1/2 transform -translate-x-1/2 w-80 bg-black border border-gray-700 shadow-xl z-50 overflow-hidden ${
         isHovered 
           ? 'opacity-100 visible max-h-96' 
           : 'opacity-0 invisible max-h-0 pointer-events-none'
@@ -212,7 +212,7 @@ function NavItemWithChevron({ label }: NavItemProps) {
       </div>
       
       {/* Dropdown Menu */}
-      <div className={`absolute top-full left-0 w-48 bg-gray-900 border border-gray-700 shadow-lg z-50 overflow-hidden ${
+      <div className={`absolute top-full left-0 w-48 bg-black border border-gray-700 shadow-lg z-50 overflow-hidden ${
         isHovered 
           ? 'opacity-100 visible max-h-32' 
           : 'opacity-0 invisible max-h-0 pointer-events-none'

@@ -230,11 +230,11 @@ export default function RecruiterLanding() {
                 }}
               >
                 <Mail className="h-8 w-8 text-yellow-400 mb-4" />
-                <h3 className="text-lg font-semibold mb-2 text-white">Recruitment Campaigns</h3>
+                <h3 className="text-lg font-semibold mb-2 text-white">Recruitment Campaigns</h3>   
                 <p className="text-sm text-gray-300">Launch targeted recruitment campaigns and outreach</p>
               </div>
-            </Link>
-
+            </Link>       
+              
             <Link to="/admin/reports" className="group">
               <div className="bg-black/90 backdrop-blur-sm p-6 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-[1.02] group-hover:scale-[1.02]"
                 style={{
@@ -321,7 +321,7 @@ export default function RecruiterLanding() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative overflow-hidden py-20">
+      <section className="relative overflow-hidden py-20">    
         <SharedAnimatedBackground />
         <div className="mx-auto max-w-4xl px-4 text-center">
           <div className="bg-black/90 backdrop-blur-sm p-8 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300"

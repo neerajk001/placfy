@@ -26,7 +26,13 @@ export default function Hero() {
             AI-powered Recruitment & HR Automation
           </span>
           <h1 className="mt-6 text-pretty text-4xl font-semibold leading-tight sm:text-5xl md:text-6xl">
-            All-in-One Platform for Recruitment and HR Management
+            All-in-One Platform for <span className="relative inline-block">
+              Recruitment
+              <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 to-yellow-500 animate-pulse"></span>
+            </span> and <span className="relative inline-block">
+              HR
+              <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 to-yellow-500 animate-pulse"></span>
+            </span> Management
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-balance text-black">
             From sourcing candidates to onboarding employees, manage the entire
