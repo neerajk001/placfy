@@ -9,9 +9,9 @@ const General: React.FC = () => {
           <p className="text-gray-600">General settings and configuration</p>
         </div>
       </div>
-    </div>
+    </div>         
   );   
-};                                             
+};                                                    
 export default General;
      
 

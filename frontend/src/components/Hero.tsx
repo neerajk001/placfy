@@ -28,7 +28,7 @@ export default function Hero() {
           <h1 className="mt-6 text-pretty text-4xl font-semibold leading-tight sm:text-5xl md:text-6xl">
             All-in-One Platform for Recruitment and HR Management
           </h1>
-          <p className="mx-auto mt-5 max-w-2xl text-balance text-white">
+          <p className="mx-auto mt-5 max-w-2xl text-balance text-black">
             From sourcing candidates to onboarding employees, manage the entire
             talent lifecycle in one powerful platform. Automate HR workflows,
             track performance, and focus on building a stronger workforce.

@@ -74,7 +74,7 @@ export default function HRLanding() {
             <h1 className="mt-6 text-pretty text-4xl font-semibold leading-tight sm:text-5xl md:text-6xl text-black">
               Streamline Your HR Operations
             </h1>
-            <p className="mx-auto mt-5 max-w-2xl text-balance text-white">
+            <p className="mx-auto mt-5 max-w-2xl text-balance text-black">
               Manage your entire workforce with our comprehensive HR platform. 
               From employee onboarding to performance reviews, automate workflows 
               and focus on building a stronger team.
@@ -105,7 +105,7 @@ export default function HRLanding() {
         <SharedAnimatedBackground />
         <div className="mx-auto max-w-6xl px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-white">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-black">
               Complete HR Management Suite
             </h2>
             <p className="mt-4 text-lg text-orange-500">
@@ -140,7 +140,7 @@ export default function HRLanding() {
         <SharedAnimatedBackground />
         <div className="mx-auto max-w-6xl px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-white">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-black">
               Quick Access to HR Tools
             </h2>
             <p className="mt-4 text-lg text-orange-500">

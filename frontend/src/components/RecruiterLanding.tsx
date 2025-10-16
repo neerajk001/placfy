@@ -81,7 +81,7 @@ export default function RecruiterLanding() {
             <h1 className="mt-6 text-pretty text-4xl font-semibold leading-tight sm:text-5xl md:text-6xl text-black">
               Find & Hire Top Talent Faster
             </h1>
-            <p className="mx-auto mt-5 max-w-2xl text-balance text-white">
+            <p className="mx-auto mt-5 max-w-2xl text-balance text-black">
               Streamline your recruitment process with AI-powered candidate sourcing, 
               automated screening, and intelligent matching. Build your dream team 
               with our comprehensive recruitment platform.
@@ -139,7 +139,7 @@ export default function RecruiterLanding() {
         <SharedAnimatedBackground />
         <div className="mx-auto max-w-6xl px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-white">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-black">
               Complete Recruitment Solution
             </h2>
             <p className="mt-4 text-lg text-orange-500">
@@ -174,7 +174,7 @@ export default function RecruiterLanding() {
         <SharedAnimatedBackground />
         <div className="mx-auto max-w-6xl px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-white">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-black">
               Jump Into Recruitment Tools
             </h2>
             <p className="mt-4 text-lg text-orange-500">
@@ -330,7 +330,7 @@ export default function RecruiterLanding() {
               border: '2px solid transparent'
             }}
           >
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4 text-white">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4 text-black">
               Ready to Revolutionize Your Recruitment?
             </h2>
             <p className="text-xl text-gray-300 mb-8">
