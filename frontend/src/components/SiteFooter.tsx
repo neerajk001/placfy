@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom"
 import { Twitter, Linkedin, Github } from "lucide-react"
+import SharedAnimatedBackground from "./SharedAnimatedBackground"
 
 export default function SiteFooter() {
   return (
-    <footer className="border-t bg-background">
+    <footer className="relative overflow-hidden border-t">
+      <SharedAnimatedBackground />
       <div className="mx-auto max-w-6xl px-4 py-10">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Placfy. All rights reserved.</p>

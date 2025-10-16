@@ -1,6 +1,6 @@
 import React from 'react';
 
-const General: React.FC = () => {
+const General: React.FC = () => {  
   return (
     <div className="flex-1 p-6 overflow-y-auto bg-gray-50">
       <div className="max-w-7xl mx-auto">
@@ -10,7 +10,8 @@ const General: React.FC = () => {
         </div>
       </div>
     </div>
-  );
-};
-
+  );   
+};                                             
 export default General;
+     
+

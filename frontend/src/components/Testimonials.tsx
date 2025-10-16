@@ -1,4 +1,6 @@
 
+import SharedAnimatedBackground from "./SharedAnimatedBackground"
+
 const testimonials = [
   {
     quote: "We reduced time-to-hire by 40% and doubled recruiter productivity in two quarters.",
@@ -28,15 +30,21 @@ const testimonials = [
 
 function TestimonialCard({ testimonial }: { testimonial: typeof testimonials[0] }) {
   return (
-    <article className="rounded-2xl border bg-card p-6 shadow-sm">
-      <p className="text-pretty">
+    <article 
+      className="rounded-2xl bg-black/90 backdrop-blur-sm p-6 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105"
+      style={{
+        background: 'linear-gradient(black, black) padding-box, linear-gradient(45deg, white, #FFD700, #FFA500, white) border-box',
+        border: '2px solid transparent'
+      }}
+    >
+      <p className="text-pretty text-white">
         "{testimonial.quote}"
       </p>
       <div className="mt-4 flex items-center gap-3">
-        <img src={testimonial.avatar || "/placeholder.svg"} alt="" className="h-10 w-10 rounded-full border" loading="lazy" />
+        <img src={testimonial.avatar || "/placeholder.svg"} alt="" className="h-10 w-10 rounded-full border-2 border-yellow-400" loading="lazy" />
         <div>
-          <p className="text-sm font-medium">{testimonial.name}</p>
-          <p className="text-xs text-muted-foreground">{testimonial.role}</p>
+          <p className="text-sm font-medium text-white">{testimonial.name}</p>
+          <p className="text-xs text-gray-300">{testimonial.role}</p>
         </div>
       </div>
     </article>
@@ -45,11 +53,12 @@ function TestimonialCard({ testimonial }: { testimonial: typeof testimonials[0] 
 
 export default function Testimonials() {
   return (
-    <section className="bg-background">
+    <section className="relative overflow-hidden">
+      <SharedAnimatedBackground />
       <div className="mx-auto max-w-6xl px-4 py-20">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-semibold sm:text-4xl">What customers say</h2>
-          <p className="mt-3 text-muted-foreground">Real results from teams scaling with intelligent hiring.</p>
+          <p className="mt-3 text-orange-500">Real results from teams scaling with intelligent hiring.</p>
         </div>
 
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4" aria-label="Customer testimonials">

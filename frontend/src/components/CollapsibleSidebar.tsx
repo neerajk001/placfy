@@ -69,7 +69,11 @@ const CollapsibleSidebar: React.FC<CollapsibleSidebarProps> = ({ onSectionChange
       icon: Users,
       subItems: [
         { id: 'employees', label: 'Employees', status: 'star-outline' },
-        { id: 'assignment', label: 'Assignment', status: 'star-outline' }
+        { id: 'assignment', label: 'Assignment', status: 'star-outline' },
+        { id: 'attendance', label: 'Attendance', status: 'star-outline' },
+        { id: 'leave', label: 'Leave Management', status: 'star-outline' },
+        { id: 'performance', label: 'Performance', status: 'star-outline' },
+        { id: 'payroll', label: 'Payroll', status: 'star-outline' }
       ]
     },
     {

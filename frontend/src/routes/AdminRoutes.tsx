@@ -10,6 +10,10 @@ import Campaigns from '../components/Campaigns';
 import Recruit from '../components/Recruit';
 import EmployeeManagement from '../components/EmployeeManagement';
 import AssignmentManagement from '../components/AssignmentManagement';
+import AttendanceManagement from '../components/AttendanceManagement';
+import LeaveManagement from '../components/LeaveManagement';
+import PerformanceReviews from '../components/PerformanceReviews';
+import PayrollManagement from '../components/PayrollManagement';
 import General from '../components/General';
 import Reports from '../components/Reports';
 
@@ -36,6 +40,10 @@ const AdminRoutes: React.FC = () => {
         {/* HR Routes */}
         <Route path="hr/employees" element={<EmployeeManagement />} />
         <Route path="hr/assignment" element={<AssignmentManagement />} />
+        <Route path="hr/attendance" element={<AttendanceManagement />} />
+        <Route path="hr/leave" element={<LeaveManagement />} />
+        <Route path="hr/performance" element={<PerformanceReviews />} />
+        <Route path="hr/payroll" element={<PayrollManagement />} />
         
         {/* Legacy redirects for old routes */}
         <Route path="employees" element={<Navigate to="/admin/hr/employees" replace />} />

@@ -46,6 +46,18 @@ const AdminLayout: React.FC = () => {
       case 'assignment':
         navigate('/admin/hr/assignment');
         break;
+      case 'attendance':
+        navigate('/admin/hr/attendance');
+        break;
+      case 'leave':
+        navigate('/admin/hr/leave');
+        break;
+      case 'performance':
+        navigate('/admin/hr/performance');
+        break;
+      case 'payroll':
+        navigate('/admin/hr/payroll');
+        break;
       
       default:
         navigate('/admin');

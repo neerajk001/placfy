@@ -7,13 +7,15 @@ import Testimonials from './components/Testimonials';
 import Pricing from './components/Pricing';
 import CtaBanner from './components/CtaBanner';
 import SiteFooter from './components/SiteFooter';
+import HRLanding from './components/HRLanding';
+import RecruiterLanding from './components/RecruiterLanding';
 import AdminRoutes from './routes/AdminRoutes';
 
 
 const App = () => {
   return (
     <Routes>
-      {/* Landing Page */}
+      {/* Main Landing Page */}
       <Route path="/" element={
         <div className='h-screen'>
           <SiteNavbar/>
@@ -23,6 +25,24 @@ const App = () => {
           <Testimonials/>
           <Pricing/>
           <CtaBanner/>
+          <SiteFooter/>
+        </div>
+      } />
+      
+      {/* HR Landing Page */}
+      <Route path="/hr" element={
+        <div>
+          <SiteNavbar/>
+          <HRLanding/>
+          <SiteFooter/>
+        </div>
+      } />
+      
+      {/* Recruiter Landing Page */}
+      <Route path="/recruiter" element={
+        <div>
+          <SiteNavbar/>
+          <RecruiterLanding/>
           <SiteFooter/>
         </div>
       } />
