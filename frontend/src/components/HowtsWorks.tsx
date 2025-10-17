@@ -58,8 +58,8 @@ export default function HowItWorks() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="inline-block rounded-full bg-blue-100 px-4 py-2 text-sm font-medium text-blue-700 mb-4">
-            🚀 Simple 4-Step Process
+          <span className="inline-block rounded-full bg-blue-100 px-4 py-2 text-sm font-medium text-blue-700 mb-4 border-2 border-black">
+            Simple 4-Step Process
           </span>
           <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
             How it works
